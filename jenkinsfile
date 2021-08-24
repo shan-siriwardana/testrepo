@@ -11,7 +11,7 @@ pipeline {
             
                 withCredentials([string(credentialsId: 'aws_access_key_id', variable: 'AWS_KEY'),string(credentialsId: 'aws_secret_access_key',variable: 'AWS_SECRET')]){
                     
-                    sh 'echo AWS_KEY'
+                    sh 'echo ${AWS_KEY}'
                     sh 'python3 connection.py '
                 }
             
