@@ -11,6 +11,10 @@ def download_files_from_s3bucket():
     KEY = 'testshan.txt'
     
     s3 = boto3.client('s3', aws_access_key_id=key,aws_secret_access_key=secret)
-    s3.download_file(BUCKET_NAME,KEY,'k.png')
+    #s3.download_file(BUCKET_NAME,KEY,'k.png')
+
+    s3objects = s3.objects.all()
+    print('hi there')
+    print(type(s3objects))
 
 download_files_from_s3bucket()
